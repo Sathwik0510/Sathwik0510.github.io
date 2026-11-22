@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vanam Sathwik – Software Developer Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f6fa; --surface:#ffffff; --ink:#15213b; --muted:#56627a; --line:#d5dbe8; --accent:#2446d6; --accent-ink:#ffffff; --tag:#e6ebfb;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1524; --surface:#171f33; --ink:#e8ecf7; --muted:#9aa6c0; --line:#2a3552; --accent:#8fa8ff; --accent-ink:#0f1524; --tag:#222d4a;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1524; --surface:#171f33; --ink:#e8ecf7; --muted:#9aa6c0; --line:#2a3552; --accent:#8fa8ff; --accent-ink:#0f1524; --tag:#222d4a;
+  color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;margin:0;line-height:1.1}
+a{color:var(--accent)}
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+main{max-width:920px;margin:0 auto;padding:0 24px 64px}
+section{padding:56px 0 8px}
+h2{font-size:1.7rem;font-weight:700;margin-bottom:22px}
+
+/* hero */
+.hero{padding:72px 0 24px}
+.hero h1{font-size:clamp(3rem,11vw,6.2rem);font-weight:800;letter-spacing:-.03em}
+.hero .role{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(1.15rem,3vw,1.5rem);font-weight:500;color:var(--accent);margin:14px 0 22px}
+.hero p{max-width:60ch;color:var(--muted);margin:0 0 28px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:11px 20px;border-radius:8px;border:1.5px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:500}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn.primary:hover{filter:brightness(1.1);background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:200px 1fr;gap:0;border-top:1px solid var(--line);margin:0}
+.skills dt,.skills dd{padding:14px 0;border-bottom:1px solid var(--line);margin:0}
+.skills dt{font-weight:500}
+.skills dd{color:var(--muted)}
+
+/* projects */
+.project{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:6px;padding:24px 26px;margin-bottom:18px}
+.project h3{font-size:1.35rem;font-weight:700}
+.project ul{margin:12px 0 14px;padding-left:20px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 0;padding:0;list-style:none}
+.tags li{background:var(--tag);padding:3px 12px;border-radius:99px;font-size:.85rem}
+
+/* experience timeline */
+.timeline{position:relative;margin:0;padding:0 0 0 28px;list-style:none;border-left:2px solid var(--line)}
+.timeline li{position:relative;padding-bottom:30px}
+.timeline li::before{content:"";position:absolute;left:-37px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.timeline h3{font-size:1.2rem}
+.when{color:var(--muted);font-size:.92rem;margin:2px 0 8px}
+.timeline ul{margin:0;padding-left:20px;color:var(--muted)}
+
+/* education & certs */
+.rows{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.rows li{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:14px 0;border-bottom:1px solid var(--line)}
+.rows .sub{color:var(--muted);display:block;font-size:.95rem}
+.rows .score{font-weight:500;white-space:nowrap}
+
+/* contact */
+.contact p{max-width:56ch;color:var(--muted)}
+.contact ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:8px}
+footer{max-width:920px;margin:0 auto;padding:24px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+
+@media (max-width:640px){
+  body{font-size:16px}
+  .skills{grid-template-columns:1fr}
+  .skills dt{border-bottom:0;padding-bottom:0}
+  .skills dd{padding-top:2px}
+  .project{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<main>
+
+<header class="hero">
+  <h1>Vanam Sathwik</h1>
+  <div class="role">Aspiring Software Developer: Python, Java and AI/ML</div>
+  <p>I’m a B.Tech student in Computer Science (AI &amp; ML) at Vaagdevi College of Engineering, Warangal. I build full-stack applications and small AI tools, and I’m looking for a software developer role where I can keep learning by shipping real products.</p>
+  <div class="actions">
+    <a class="btn primary" href="#projects">See my projects</a>
+    <a class="btn" href="https://github.com/Sathwik05100" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://linkedin.com/in/sathwik-vanam-6a3b5a2a2" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="mailto:sathwikvanam0510@gmail.com">Email me</a>
+  </div>
+</header>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <article class="project">
+    <h3>Hostel Management System</h3>
+    <ul>
+      <li>Full-stack desktop application for student registration, room allocation and fee tracking.</li>
+      <li>Normalized relational database schema for consistent, efficient data management.</li>
+      <li>Admin dashboard that automates day-to-day hostel operations.</li>
+    </ul>
+    <ul class="tags"><li>Java</li><li>JDBC</li><li>MySQL</li></ul>
+    <p><a href="https://github.com/Sathwik0510/hostel-Management" target="_blank" rel="noopener">View code on GitHub</a></p>
+  </article>
+
+  <article class="project">
+    <h3>AI-Driven Career Guidance System</h3>
+    <ul>
+      <li>Recommendation system that suggests personalized career paths to students.</li>
+      <li>Analyzes skills, interests and academic performance to produce actionable insights.</li>
+    </ul>
+    <ul class="tags"><li>Python</li><li>NLP</li><li>Scikit-learn</li></ul>
+    <p><a href="https://github.com/Sathwik0510/Ai-driven-career-guidance-system" target="_blank" rel="noopener">View code on GitHub</a></p>
+  </article>
+
+  <article class="project">
+    <h3>Automatic Mail System</h3>
+    <ul>
+      <li>Automated bulk and scheduled email delivery.</li>
+      <li>Cuts the manual effort of sending repeated emails.</li>
+    </ul>
+    <ul class="tags"><li>Python</li><li>SMTP</li></ul>
+    <p><a href="https://github.com/Sathwik0510/automatic-mail" target="_blank" rel="noopener">View code on GitHub</a></p>
+  </article>
+
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <ul class="timeline">
+    <li>
+      <h3>Intern, Infosys Springboard (Internship 7.0, Batch B3)</h3>
+      <div class="when">Aug 2026 to Oct 2026</div>
+      <ul>
+        <li>Worked on the AI-Powered Traffic Prediction and Intelligent Congestion Management Platform project.</li>
+        <li>Completed all mandatory assignments and received a certificate of completion from Infosys (issued Nov 2026).</li>
+      </ul>
+    </li>
+    <li>
+      <h3>Full Stack Development Intern, SITER Academy</h3>
+      <div class="when">Jan 2026 to Mar 2026 · Remote</div>
+      <ul>
+        <li>Built and deployed a responsive web application with HTML, CSS, Bootstrap and Tailwind CSS.</li>
+        <li>Designed UI mockups in Figma and set up an SEO-friendly project structure.</li>
+        <li>Managed code with Git and GitHub, wrote documentation and presented the project to stakeholders.</li>
+      </ul>
+    </li>
+    <li>
+      <h3>Program Intern, 1M1B (One Million for One Billion)</h3>
+      <div class="when">Aug 2025 to Oct 2025 · Remote</div>
+      <ul>
+        <li>Contributed to social-impact initiatives and community awareness programs.</li>
+        <li>Took part in workshops on communication, innovation and leadership.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>Languages</dt><dd>Python, Java, C, JavaScript (basics)</dd>
+    <dt>Machine learning and AI</dt><dd>TensorFlow, Scikit-learn, NLP</dd>
+    <dt>Data and visualization</dt><dd>Pandas, Matplotlib, Tableau</dd>
+    <dt>Web development</dt><dd>HTML, CSS, Bootstrap, Tailwind CSS, Figma</dd>
+    <dt>Databases</dt><dd>SQL, MySQL, MongoDB</dd>
+    <dt>Tools</dt><dd>Git, GitHub</dd>
+    <dt>Soft skills</dt><dd>Communication, teamwork, documentation, presentation</dd>
+  </dl>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <ul class="rows">
+    <li><span><strong>B.Tech, Computer Science Engineering (AI &amp; ML)</strong><span class="sub">Vaagdevi College of Engineering, Warangal · 2023 to 2027</span></span><span class="score">CGPA 8.60 / 10</span></li>
+    <li><span><strong>Intermediate (MPC)</strong><span class="sub">Resonance Junior College · 2021 to 2023</span></span><span class="score">848 / 1000</span></li>
+    <li><span><strong>SSC (10th grade)</strong><span class="sub">Wisdom High School · 2020 to 2021</span></span><span class="score">CGPA 10.0 / 10</span></li>
+  </ul>
+</section>
+
+<section id="certifications">
+  <h2>Certifications</h2>
+  <ul class="rows">
+    <li><span>AI for Beginners</span><span class="sub">HP Foundation</span></li>
+    <li><span>Machine Learning with Python</span><span class="sub">Cognitive Class (IBM)</span></li>
+    <li><span>HTML, CSS and JavaScript</span><span class="sub">E-Swecha</span></li>
+    <li><span>Infosys Springboard Internship 7.0 (B3): AI-Powered Traffic Prediction and Intelligent Congestion Management Platform</span><span class="sub">Infosys</span></li>
+  </ul>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <p>I’m open to internships and entry-level developer roles. The quickest way to reach me is by email.</p>
+  <ul>
+    <li>Email: <a href="mailto:sathwikvanam0510@gmail.com">sathwikvanam0510@gmail.com</a></li>
+    <li>Phone: <a href="tel:+919381147135">+91-9381147135</a></li>
+    <li>LinkedIn: <a href="https://linkedin.com/in/sathwik-vanam-6a3b5a2a2" target="_blank" rel="noopener">sathwik-vanam</a></li>
+    <li>GitHub: <a href="https://github.com/Sathwik05100" target="_blank" rel="noopener">Sathwik05100</a></li>
+  </ul>
+</section>
+
+</main>
+<footer>© 2026 Vanam Sathwik · Warangal, Telangana</footer>
+</body>
+</html>
